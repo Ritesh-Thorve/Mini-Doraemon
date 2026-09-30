@@ -86,8 +86,8 @@ function router() {
     if (path === '/') {
         mountPage(HomePage);
     } else if (path === '/cves') {
-        mountPage(CvesPage);
-    } else if (path === '/projects') {
+    window.location.href = '/';
+}else if (path === '/projects') {
         mountPage(ProjectsPage);
     } else if (path === '/blog' || path === '/blog/') {
         mountPage(BlogPage);
