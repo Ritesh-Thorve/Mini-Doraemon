@@ -10,5 +10,11 @@
 		"title": "Race Condition Bypasses Organization Member Limit",
 		"date": "2026-08-07",
 		"description": "Concurrent member-add requests bypassed the free-tier organization cap because the limit check and insertion were not atomic."
+	},
+	{
+		"id": "web-application-security",
+		"title": "Web Application Security",
+		"date": "2026-09-30",
+		"description": "Hands-on notes on web application vulnerabilities, practical testing, security labs, and bug bounty research."
 	}
 ]
