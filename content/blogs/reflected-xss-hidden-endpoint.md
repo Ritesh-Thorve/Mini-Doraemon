@@ -1,6 +1,6 @@
 ---
 title: "Reflected Cross-Site Scripting (XSS) via Hidden Endpoint Discovered Through JavaScript Analysis"
-date: "2026-09-30"
+date: "2026-04-08"
 ---
 
 ## Vulnerability Class
