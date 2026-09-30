@@ -1,6 +1,6 @@
 export function HomePage() {
     return `
-        <div class="hero fade-in">
+        <div class="">
             <div class="hero-heading">
                 <h1>Hey,</h1>
                 <h2>It's Ritesh</h2>
