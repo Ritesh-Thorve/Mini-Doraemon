@@ -1,6 +1,5 @@
 import { fetchJson } from '../data/content.js';
 import { BlogItem } from '../components/BlogItem.js';
-import { escapeHtml } from '../components/html.js';
 
 export async function BlogPage() {
     try {
