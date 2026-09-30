@@ -2,11 +2,12 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Start Mini-Doraemon server",
+			"label": "Start Mini-Doraemon dev server",
 			"type": "shell",
-			"command": "/usr/bin/python3",
+			"command": "npm",
 			"args": [
-				"server.py"
+				"run",
+				"dev"
 			],
 			"isBackground": true,
 			"problemMatcher": []
@@ -19,6 +20,41 @@
 				"pages"
 			],
 			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install npm dependencies",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Vite app",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Mini-Doraemon dev server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--",
+				"--host",
+				"0.0.0.0"
+			],
+			"isBackground": true,
 			"problemMatcher": []
 		}
 	]
