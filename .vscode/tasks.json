@@ -67,6 +67,50 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Build avatar hover change",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Copy avatar images into public assets",
+			"type": "shell",
+			"command": "/bin/cp",
+			"args": [
+				"dist/images/1.jpg",
+				"public/images/1.jpg"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Copy hover avatar image into public assets",
+			"type": "shell",
+			"command": "/bin/cp",
+			"args": [
+				"dist/images/2.jpg",
+				"public/images/2.jpg"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build with supplied avatar images",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }
