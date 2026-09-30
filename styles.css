@@ -884,12 +884,12 @@ input[type="checkbox"] {
 
 .dork-page .launcher-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1150px;
     margin-inline: auto;
 }
 
 .dork-page main {
-    width: min(800px, calc(100vw - 4rem));
+    width: 100%;
     align-self: center;
 }
 
