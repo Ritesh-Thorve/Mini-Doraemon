@@ -4,5 +4,11 @@
 		"title": "Reflected XSS via a Hidden Endpoint Discovered Through JavaScript Analysis",
 		"date": "2026-09-30",
 		"description": "An undocumented endpoint reflected a request parameter into HTML without encoding, allowing JavaScript execution in the application's origin."
+	},
+	{
+		"id": "organization-member-limit-race-condition",
+		"title": "Race Condition Bypasses Organization Member Limit",
+		"date": "2026-09-30",
+		"description": "Concurrent member-add requests bypassed the free-tier organization cap because the limit check and insertion were not atomic."
 	}
 ]
