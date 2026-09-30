@@ -1,5 +1,5 @@
 import { mountDorkLauncher } from './modules/dork/launcher.js';
-import { BlogPage } from './modules/pages/BlogPage.js';
+import { BlogPage, mountBlogPage } from './modules/pages/BlogPage.js';
 import { BlogPostPage } from './modules/pages/BlogPostPage.js';
 import { CvesPage } from './modules/pages/CvesPage.js';
 import { DorkPage } from './modules/pages/DorkPage.js';
@@ -18,6 +18,7 @@ async function mountPage(render, ...args) {
         if (window.location.pathname !== pathname) return;
         app.innerHTML = markup;
 
+        if (pathname === '/blog' || pathname === '/blog/') mountBlogPage(app);
         if (pathname === '/recon') mountReconPage(app);
         if (pathname === '/dork') mountDorkLauncher(app);
     } catch (error) {

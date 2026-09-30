@@ -163,36 +163,111 @@ footer {
 }
 
 /* Blog List */
+.blogs-page {
+    width: 100%;
+}
+
+.blogs-header {
+    display: block;
+    margin: 0 0 2.25rem;
+}
+
+.blogs-header h1 {
+    margin-bottom: 0.15rem;
+    color: var(--text-white);
+}
+
+.blogs-header h2 {
+    color: var(--text-gray);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.blogs-header h2 a {
+    color: var(--text-gray);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.blog-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 54px;
+    margin-bottom: 2.25rem;
+    padding: 0 1rem 0 1.25rem;
+    border: 1px solid #303030;
+    border-radius: 5px;
+}
+
+.blog-search:focus-within {
+    border-color: #555;
+}
+
+.blog-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text-white);
+    font: inherit;
+}
+
+.blog-search input::placeholder {
+    color: var(--text-gray);
+}
+
+.blog-search-icon {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .blog-list {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    max-width: 800px;
+    width: 100%;
+    gap: 0;
+    border-top: 1px solid #292929;
 }
 
-.blog-item h2 {
-    font-size: 1.3rem;
+.blog-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #292929;
+}
+
+.blog-item-title h2 {
+    margin-bottom: 0.2rem;
+    color: var(--text-gray);
+    font-size: 1rem;
     font-weight: 600;
+}
+
+.blog-item-title:hover h2 {
     color: var(--text-white);
-    margin-bottom: 0.3rem;
 }
 
 .blog-item .date {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-dim);
-    margin-bottom: 0.8rem;
+    margin: 0;
 }
 
-.blog-item p {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-}
-
-.blog-item .read-btn {
-    font-size: 0.9rem;
-    color: var(--text-white);
-    text-decoration: underline;
-    text-underline-offset: 4px;
+.blog-item[hidden] {
+    display: none;
 }
 
 .projects-intro {
