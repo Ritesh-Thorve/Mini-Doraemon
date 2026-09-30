@@ -1,0 +1,20 @@
+[
+  {
+    "id": "web-cache-deception",
+    "title": "Web Cache Deception",
+    "date": "2026-09-28",
+    "description": "Notes and research on cache behavior, path mapping, delimiters and normalization."
+  },
+  {
+    "id": "web-cache-poisoning",
+    "title": "Web Cache Poisoning",
+    "date": "2026-09-20",
+    "description": "Research notes covering unkeyed inputs, cache keys, headers and parameter handling."
+  },
+  {
+    "id": "android-reversing",
+    "title": "Android Application Reversing",
+    "date": "2026-09-15",
+    "description": "Notes on APK analysis using JADX, Apktool, ADB, MobSF and Frida."
+  }
+]
