@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Mini-Doraemon server",
+			"type": "shell",
+			"command": "/usr/bin/python3",
+			"args": [
+				"server.py"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Remove empty legacy pages folder",
+			"type": "shell",
+			"command": "/bin/rmdir",
+			"args": [
+				"pages"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

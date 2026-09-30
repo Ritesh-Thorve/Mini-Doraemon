@@ -1,0 +1,28 @@
+[
+  {
+    "id": "recon-launcher",
+    "category": "Reconnaissance",
+    "title": "Recon Launcher",
+    "description": "Launch a collection of public-source searches for a domain, covering certificates, DNS history, exposed services, and more.",
+    "capabilities": [
+      "Certificate discovery",
+      "DNS history",
+      "Exposure search"
+    ],
+    "href": "/recon",
+    "actionLabel": "Open Recon Launcher"
+  },
+  {
+    "id": "dork-launcher",
+    "category": "Search workflow",
+    "title": "Search Engine Dork Launcher",
+    "description": "Run selected security-focused search queries across multiple search engines to explore a target domain.",
+    "capabilities": [
+      "Four search engines",
+      "Selectable query groups",
+      "Domain-focused"
+    ],
+    "href": "/dork",
+    "actionLabel": "Open Dork Launcher"
+  }
+]

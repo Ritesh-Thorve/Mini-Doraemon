@@ -1,5 +1,4 @@
 import { dorkCategories, searchEngines } from './data.js';
-import { renderDorkPage } from './view.js';
 
 function normalizeDomain(input) {
     const value = input.trim();
@@ -65,8 +64,6 @@ function showBlockedResults(form, requests, blockedCount, domain) {
 }
 
 export function mountDorkLauncher(root) {
-    root.innerHTML = renderDorkPage(dorkCategories, searchEngines);
-
     const form = root.querySelector('#dork-form');
 
     updateSelectionSummary(form);

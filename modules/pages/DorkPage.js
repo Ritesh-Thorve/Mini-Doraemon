@@ -1,30 +1,8 @@
-function escapeHtml(value) {
-    return String(value).replace(/[&<>"']/g, character => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-    })[character]);
-}
+import { dorkCategories, searchEngines } from '../dork/data.js';
+import { DorkControls } from '../components/DorkControls.js';
 
-export function renderDorkPage(categories, engines) {
-    const engineControls = engines.map((engine, index) => `
-        <label class="engine-label">
-            <input type="checkbox" name="engine" value="${escapeHtml(engine.key)}" ${index === 0 ? 'checked' : ''}>
-            ${escapeHtml(engine.name)}
-        </label>
-    `).join('');
-
-    const categoryCards = categories.map(category => `
-        <label class="dork-card" data-category="${escapeHtml(category.id)}">
-            <div class="dork-card-header">
-                <input type="checkbox" name="dork" value="${escapeHtml(category.id)}">
-                <h4>${escapeHtml(category.id)}</h4>
-            </div>
-            <p>${escapeHtml(category.description)}</p>
-        </label>
-    `).join('');
+export function DorkPage() {
+    const { engineControls, categoryCards } = DorkControls(dorkCategories, searchEngines);
 
     return `
         <div class="launcher-container dork-launcher fade-in">
@@ -32,34 +10,24 @@ export function renderDorkPage(categories, engines) {
                 <h1>Search Engine Dork Launcher</h1>
                 <p>This tool helps security researchers, bug bounty hunters, and penetration testers quickly run dorks against a target domain using Google, Bing, DuckDuckGo, and Yandex to discover sensitive endpoints, exposed files, and potential vulnerabilities.</p>
             </div>
-
             <form id="dork-form" class="form-group">
                 <input type="text" id="dork-domain" class="input-field" placeholder="Enter domain (e.g. example.com)" required>
-
                 <div class="engine-toggles" style="margin-top: 1rem;">
-                    <span>Search Engines:</span>
-                    ${engineControls}
+                    <span>Search Engines:</span>${engineControls}
                 </div>
-
                 <div class="dork-controls">
                     <button type="button" class="control-btn" data-action="select-all">Select All</button>
                     <button type="button" class="control-btn" data-action="clear">Deselect All</button>
                     <span class="selection-count" id="dork-count" aria-live="polite"></span>
                 </div>
-
                 <div class="dork-grid-container">
-                    <div class="dork-grid" id="dork-grid">
-                        ${categoryCards}
-                    </div>
+                    <div class="dork-grid" id="dork-grid">${categoryCards}</div>
                 </div>
-
                 <div style="margin-top: 1rem;">
                     <button type="submit" class="btn-primary" id="launch-dork-btn">Launch Dorks (1 engine)</button>
                 </div>
-
                 <div id="dork-results" style="display: none;"></div>
             </form>
-
             <div class="launcher-notes">
                 <ul>
                     <li>Sensitive files - Config files, logs, backups, environment files</li>

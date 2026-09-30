@@ -4,7 +4,7 @@ from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
-SPA_ROUTES = {"/", "/cves", "/recon", "/dork", "/blog"}
+SPA_ROUTES = {"/", "/cves", "/projects", "/recon", "/dork", "/blog"}
 
 
 class PortfolioHandler(SimpleHTTPRequestHandler):
