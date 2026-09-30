@@ -9,6 +9,45 @@ import { mountReconPage, ReconPage } from './modules/pages/ReconPage.js';
 
 const app = document.getElementById('app');
 
+const routeDescriptions = {
+    '/': 'Ritesh is a security researcher focused on web application security, vulnerability research, bug bounty hunting, and Android security.',
+    '/cves': 'Published vulnerability disclosures and security acknowledgements by Ritesh.',
+    '/projects': 'Security research tools and projects built by Ritesh.',
+    '/blog': 'Security research notes, vulnerability findings, and technical articles by Ritesh.',
+    '/recon': 'Launch public-source domain reconnaissance searches across security and intelligence services.',
+    '/dork': 'Run security-focused search queries across multiple search engines for a target domain.'
+};
+
+function updatePageMetadata(path) {
+    const heading = app.querySelector('h1')?.textContent.trim();
+    const title = path === '/'
+        ? 'Ritesh | Web Application Security Researcher'
+        : heading
+            ? `${heading} | Ritesh - Security Researcher`
+            : 'Ritesh | Web Application Security Researcher';
+    let description = routeDescriptions[path];
+
+    if (path.startsWith('/blog/')) {
+        const paragraphs = [...app.querySelectorAll('.blog-content p')];
+        description = paragraphs.find(paragraph => paragraph.textContent.trim().length > 80)?.textContent.trim();
+    }
+
+    document.title = title;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    const openGraphTitle = document.querySelector('meta[property="og:title"]');
+    const openGraphDescription = document.querySelector('meta[property="og:description"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+
+    if (description) {
+        descriptionMeta?.setAttribute('content', description);
+        openGraphDescription?.setAttribute('content', description);
+        twitterDescription?.setAttribute('content', description);
+    }
+    openGraphTitle?.setAttribute('content', title);
+    twitterTitle?.setAttribute('content', title);
+}
+
 async function mountPage(render, ...args) {
     const pathname = window.location.pathname;
     app.innerHTML = '<p class="fade-in">Loading...</p>';
@@ -17,6 +56,7 @@ async function mountPage(render, ...args) {
         const markup = await render(...args);
         if (window.location.pathname !== pathname) return;
         app.innerHTML = markup;
+        updatePageMetadata(pathname);
 
         if (pathname === '/blog' || pathname === '/blog/') mountBlogPage(app);
         if (pathname === '/recon') mountReconPage(app);
