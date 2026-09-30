@@ -64,6 +64,7 @@ header {
     align-items: center;
     width: min(100%, var(--header-width));
     margin: 0 auto 4rem;
+    margin-top: 2rem;
     gap: 2.5rem;
 }
 
@@ -120,7 +121,7 @@ nav {
     justify-content: flex-end;
 }
 nav a {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--text-gray);
     white-space: nowrap;
 }
@@ -162,7 +163,7 @@ main {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--text-white);
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .hero h2 {
