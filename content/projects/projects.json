@@ -1,28 +1,63 @@
 [
-  {
-    "id": "recon-launcher",
-    "category": "Reconnaissance",
-    "title": "Recon Launcher",
-    "description": "Launch a collection of public-source searches for a domain, covering certificates, DNS history, exposed services, and more.",
+   {
+    "id": "Application-Security-Dashboard",
+    "category": "Application Security",
+    "title": "Application Security Testing Dashboard",
+    "description": "A centralized security testing dashboard for managing applications, importing scanner findings, tracking vulnerabilities by severity and CWE, documenting evidence, monitoring remediation, and generating assessment reports.",
     "capabilities": [
-      "Certificate discovery",
-      "DNS history",
-      "Exposure search"
+      "Application and environment management",
+      "JSON scanner result imports",
+      "Severity and CWE-based tracking",
+      "Evidence and reproduction steps",
+      "Remediation and retesting workflow",
+      "Assessment reports and finding history"
     ],
-    "href": "/recon",
-    "actionLabel": "Open Recon Launcher"
+    "href": "https://github.com/Ritesh-Thorve/Application-Security-Testing-Dashboard",
+    "actionLabel": "Open Security Dashboard"
   },
   {
-    "id": "dork-launcher",
-    "category": "Search workflow",
-    "title": "Search Engine Dork Launcher",
-    "description": "Run selected security-focused search queries across multiple search engines to explore a target domain.",
+    "id": "Secrets-Detection-Scanner",
+    "category": "Application Security",
+    "title": "Secrets Detection and Credential Exposure Scanner",
+    "description": "A security scanning tool that detects potential exposed API keys, access tokens, private keys, and hardcoded credentials in source code repositories, configuration files, build artifacts, and Git history.",
     "capabilities": [
-      "Four search engines",
-      "Selectable query groups",
-      "Domain-focused"
+      "Git repository scanning",
+      "API key and token detection",
+      "Private key identification",
+      "Git history analysis",
+      "Confidence-based findings",
+      "Remediation guidance",
+      "Configurable allowlists"
     ],
-    "href": "/dork",
-    "actionLabel": "Open Dork Launcher"
+    "href": "https://github.com/Ritesh-Thorve/Secrets-Detection-Scanner",
+    "actionLabel": "Explore Secrets Scanner"
+  },
+  {
+    "id": "websentinel",
+    "category": "Web Application Security",
+    "title": "WebSentinel",
+    "description": "A web application security scanner that maps attack surfaces by crawling same-origin links, sitemaps, script references, and JavaScript-rendered routes.",
+    "capabilities": [
+      "Attack surface discovery",
+      "JavaScript-rendered route crawling",
+      "Automated security scanning"
+    ],
+    "href": "https://github.com/Ritesh-Thorve/WebSentinel",
+    "actionLabel": "View WebSentinel"
+  },
+  {
+    "id": "postmessage-origin-scanner",
+    "category": "Browser Security",
+    "title": "PostMessage Origin Scanner",
+    "description": "A browser extension with a CLI companion that detects weak or missing window.postMessage origin validation, analyzes message listeners, captures runtime traffic, and generates proof-of-concept HTML for security triage.",
+    "capabilities": [
+      "postMessage listener discovery",
+      "Origin validation risk analysis",
+      "Automated PoC generation",
+      "JSON findings export",
+      "CLI-based security reports"
+    ],
+    "href": "https://github.com/Ritesh-Thorve/postMessage-Origin-Scanner",
+    "actionLabel": "Explore PostMessage Scanner"
   }
 ]
